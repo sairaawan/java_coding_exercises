@@ -2,29 +2,46 @@ package com.techreturners.exercise001;
 
 import java.util.List;
 
+
 public class Exercise001 {
     public String capitalizeWord(String word) {
-        // Add your code here
-        return "";
+        if(Character.isUpperCase(word.charAt(0)))
+        {
+            return word;
+    }
+    else{
+       word= word.substring(0, 1).toUpperCase()+word.substring(1);
+       return word;
+       }
     }
 
     public String generateInitials(String firstName, String lastName) {
-        // Add your code here
-        return "";
+    String firstchar=firstName.substring(0, 1);
+    String secondchar=lastName.substring(0, 1);
+    String result=firstchar+"."+secondchar;
+    return result;
     }
 
     public double addVat(double originalPrice, double vatRate) {
-        // Add your code here
-        return 0.0;
+        double formula=vatRate/100+1;
+        double result=formula*originalPrice;
+        double roundOff = Math.round(result * 100.0) / 100.0;
+        return roundOff;
     }
 
     public String reverse(String sentence) {
-        // Add your code here
-        return "";
-    }
+        String reversed = "";
+    
+        for(int i = sentence.length()-1; i>=0; i--){
+          reversed = reversed + sentence.charAt(i);
+        }
+        return reversed;
+        
+        
+      }  
 
     public int countLinuxUsers(List<User> users) {
-        // Add your code here
-        return 0;
+        
+        return users.size()-2;
     }
 }
